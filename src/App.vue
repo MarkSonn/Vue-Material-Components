@@ -1,13 +1,18 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <RegularCard size="medium"></RegularCard>
+    <RegularButton color="md-primary" raised dense noRipple>Lol</RegularButton>
+    <!-- <router-view/> -->
   </div>
 </template>
 
 <script>
+// import RegularCard from '@/components/cards/RegularCard'
+import * as components from '@/components'
+console.log(`Components = ${Components}`);
 export default {
-  name: 'App'
+  name: 'App',
+  components
 }
 </script>
 
