@@ -1,7 +1,14 @@
 <template>
   <div id="app">
-    <RegularCard size="medium"></RegularCard>
-    <Button color="primary" href="https://www.google.com" raised dense>Lol</Button>
+
+    <RegularCard size="small" image="https://vuematerial.io/assets/examples/card-sky.jpg">
+      <template slot="title">Awesome Card</template>
+      <template slot="subtitle">With so much functionality</template>
+      <Button slot="failure">Lol</Button>
+      <Button slot="success">Ha</Button>
+    </RegularCard>
+
+    <Button color="primary" raised fab>Lol</Button>
     <!-- <router-view/> -->
   </div>
 </template>
@@ -24,4 +31,10 @@
   color: #2c3e50;
   margin-top: 60px;
 }
+  .md-card {
+    width: 320px;
+    margin: 4px;
+    display: inline-block;
+    vertical-align: top;
+  }
 </style>

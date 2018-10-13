@@ -9,7 +9,7 @@
       - Example: color="primary"
 
     raised
-      - makes a visible background for he button and adds a shadow
+      - makes a visible background for the button and adds a shadow
       - Type: Boolean
       - Default: False
 
@@ -64,7 +64,7 @@
 
 <template>
     <md-button
-      :class="['md-' + color, raised ? 'md-raised':'', dense ? 'md-dense':'', icon ? 'md-icon-button':'', fab ? 'md-fab':'', 'md-fab-' + fabLocation]"
+      :class="[color ? 'md-' + color:'', raised ? 'md-raised':'', dense ? 'md-dense':'', icon ? 'md-icon-button':'', fab ? 'md-fab':'', fabLocation ? 'md-fab-' + fabLocation:'']"
       :disabled="disabled"
       :md-ripple="!noRipple"
       :to="to"
@@ -74,9 +74,9 @@
 </template>
 
 <style lang="scss" scoped>
-  small {
-    display: block;
-  }
+  // small {
+  //   display: block;
+  // }
 </style>
 
 <script>
