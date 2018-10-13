@@ -1,5 +1,5 @@
 <!--
-  Usage: <RegularButton [options]>[text]</RegularButton>
+  Usage: <Button [options]>[text]</Button>
 
   Options:
     color="[color]"
@@ -15,6 +15,11 @@
 
     dense
       - makes a the button more compact
+      - Type: Boolean
+      - Default: False
+
+    disabled
+      - greys out the button and makes it unresponsive to clicks
       - Type: Boolean
       - Default: False
 
@@ -43,13 +48,27 @@
         - where location is any fab location without the 'md-fab-' prefix
         - Type: String
         - Example: fabLocation="bottom-right"
+
+    to="[path]"
+      - this is not the same as href (detailed below)
+      - specifies an internal path for router-link to redirect to
+      - Type: String
+      - Example: to="./example"
+
+    href="[path]"
+      - this is not the same as to (detailed above)
+      - specifies an external path for to redirect to
+      - Type: String
+      - Example: href="https://www.google.com"
  -->
 
 <template>
     <md-button
       :class="['md-' + color, raised ? 'md-raised':'', dense ? 'md-dense':'', icon ? 'md-icon-button':'', fab ? 'md-fab':'', 'md-fab-' + fabLocation]"
       :disabled="disabled"
-      :md-ripple="!noRipple">
+      :md-ripple="!noRipple"
+      :to="to"
+      :href="href">
       <slot></slot>
     </md-button>
 </template>
@@ -62,7 +81,7 @@
 
 <script>
   export default {
-    name: 'RegularButton',
+    name: 'Button',
     props: {
       color: String,
       raised: Boolean,
@@ -71,7 +90,9 @@
       disabled: Boolean,
       noRipple: Boolean,
       fab: Boolean,
-      fabLocation: String
+      fabLocation: String,
+      to: String,
+      href: String
     }
   }
 </script>

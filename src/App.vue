@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <RegularCard size="medium"></RegularCard>
-    <RegularButton color="primary" fab fabLocation="bottom-right" raised dense>Lol</RegularButton>
+    <Button color="primary" href="https://www.google.com" raised dense>Lol</Button>
     <!-- <router-view/> -->
   </div>
 </template>

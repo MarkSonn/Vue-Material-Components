@@ -1,7 +1,7 @@
 import RegularCard from '@/components/cards/RegularCard'
-import RegularButton from '@/components/buttons/RegularButton'
+import Button from '@/components/Button'
 
 export {
   RegularCard,
-  RegularButton
+  Button
 }
