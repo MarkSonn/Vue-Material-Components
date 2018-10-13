@@ -1,19 +1,18 @@
 <template>
   <div id="app">
     <RegularCard size="medium"></RegularCard>
-    <RegularButton color="md-primary" raised dense noRipple>Lol</RegularButton>
+    <RegularButton color="primary" fab fabLocation="bottom-right" raised dense>Lol</RegularButton>
     <!-- <router-view/> -->
   </div>
 </template>
 
 <script>
-// import RegularCard from '@/components/cards/RegularCard'
-import * as components from '@/components'
-console.log(`Components = ${Components}`);
-export default {
-  name: 'App',
-  components
-}
+  import * as components from '@/components'
+  console.log(`Components = ${Components}`);
+  export default {
+    name: 'App',
+    components
+  }
 </script>
 
 <style>
