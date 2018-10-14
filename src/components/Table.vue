@@ -1,21 +1,24 @@
 <template>
   <div>
-    <md-table md-card>
+    <md-table
+      v-model="tableData"
+      md-sort="id"
+      md-sort-order="desc"
+      :md-card="card"
+      :md-fixed-header="fixedHeader">
       <md-table-toolbar>
         <h1 class="md-title"><slot name="title"></slot></h1>
       </md-table-toolbar>
 
-      <md-table-row>
-        <md-table-head :md-numeric="heading.type == 'numeric'" v-for="heading in headings" :key='heading.heading'>{{ heading.heading }}</md-table-head>
-      </md-table-row>
-
-      <md-table-row v-for="row in tableData" :key="row.id">
+      <!-- Pass in headers as an array of objects mapping label, sort-by and type -->
+      <md-table-row slot="md-table-row" slot-scope="{ item }">
         <md-table-cell
-          :md-numeric="field.type == 'numeric'"
-          :class="field.type != 'numeric' ? 'left':''"
-          v-for="field in row"
-          :key="field.item">
-            {{ field.item }}
+          v-for="heading in headings"
+          :md-label="heading.label"
+          :md-sort-by="heading.sort"
+          :md-numeric="heading.type == 'numeric'"
+          :class="heading.type == 'text' ? 'left':''">
+          {{ item[heading.sort] }}
         </md-table-cell>
       </md-table-row>
     </md-table>
@@ -33,17 +36,9 @@
     name: 'Table',
     props: {
       headings: Array,
-      tableData: Array
-      // color: String,
-      // raised: Boolean,
-      // dense: Boolean,
-      // icon: Boolean,
-      // disabled: Boolean,
-      // noRipple: Boolean,
-      // fab: Boolean,
-      // fabLocation: String,
-      // to: String,
-      // href: String
+      tableData: Array,
+      card: Boolean,
+      fixedHeader: Boolean
     }
   }
 </script>
