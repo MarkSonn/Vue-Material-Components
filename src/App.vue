@@ -3,12 +3,8 @@
 
     <Navbar indent elevation="24" color="primary">
       <template slot="title">Vue Material</template>
-      <!-- <md-autocomplete
-          v-model="selectedEmployee"
-          :md-options="employees"
-          md-layout="box">
-          <label>Search...</label>
-        </md-autocomplete> -->
+      <Autocomplete :model="employees" box>Lol...</Autocomplete>
+
       <!-- <Button>Home</Button>
       <Button>About</Button>
       <Button>FAQs</Button>
@@ -27,9 +23,9 @@
       <br>
       <br>
 
-      <Table :headings="headers" :tableData="users" card fixedHeader>
+      <!-- <Table :headings="headers" :tableData="users" card fixedHeader>
         <template slot="title">My Title</template>
-      </Table>
+      </Table> -->
     </div>
 
 
@@ -38,12 +34,12 @@
     </Table> -->
 
 
-    <!-- <RegularCard size="small" image="https://vuematerial.io/assets/examples/card-sky.jpg">
+    <RegularCard size="small" image="https://vuematerial.io/assets/examples/card-sky.jpg">
       <template slot="title">Awesome Card</template>
       <template slot="subtitle">With so much functionality</template>
       <Button slot="failure">Lol</Button>
       <Button slot="success">Ha</Button>
-    </RegularCard> -->
+    </RegularCard>
 
     <!-- <Button color="primary" raised >Lol</Button> -->
     <!-- <router-view/> -->
@@ -242,5 +238,10 @@
     margin-top: 40px;
     width: 80%;
     display: inline-block;
+  }
+
+  Autocomplete, md-autocomplete {
+    padding: 0;
+    margin: 0;
   }
 </style>

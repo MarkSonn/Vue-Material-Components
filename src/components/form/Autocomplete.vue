@@ -1,12 +1,10 @@
 <template>
-  <div>
-
     <!-- Implement md-input-max-length -->
     <md-autocomplete
       v-model="selectedField"
       :md-options="model"
       :md-open-on-focus="list"
-      :md-layout="shape"
+      :md-layout="box ? 'box':''"
       :md-fuzzy-search="fuzzy"
       :md-dense="dense">
       <label><slot></slot></label>
@@ -19,8 +17,6 @@
         No countries matching "{{ term }}" were found. <a @click="noop()">Create a new</a> one!
       </template>
     </md-autocomplete>
-
-  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -33,7 +29,7 @@
       model: Array,
       list: Boolean,
       dense: Boolean,
-      shape: String,
+      box: Boolean,
       fuzzy: Boolean,
       highlight: Boolean
 
@@ -73,7 +69,7 @@
     }),
     methods: {
       noop () {
-        window.alert('noop')
+        window.alert('To Do...')
       }
     }
   }
