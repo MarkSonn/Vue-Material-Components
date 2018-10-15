@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    <!-- Start, slot, end section -->
     <md-toolbar
       :class="[color ? 'md-' + color:'', size ? 'md-' + size:'', dense ? 'md-dense':'']"
       :md-elevation="elevation ? elevation:0"

@@ -1,21 +1,37 @@
 <template>
   <div id="app">
 
-
-    <Table :headings="headers" :tableData="users" card fixedHeader>
-      <template slot="title">My Title</template>
-    </Table>
-    
-
-    <Navbar indent elevation="24" color="primary" >
+    <Navbar indent elevation="24" color="primary">
       <template slot="title">Vue Material</template>
-      <Button>Refresh</Button>
-      <Button>Refresh</Button>
-      <Button>Refresh</Button>
-      <Button>Refresh</Button>
-      <Button raised class="spacing" color="accent">Refresh</Button>
-      <Button raised class="spacing" color="accent">Create</Button>
+      <!-- <md-autocomplete
+          v-model="selectedEmployee"
+          :md-options="employees"
+          md-layout="box">
+          <label>Search...</label>
+        </md-autocomplete> -->
+      <!-- <Button>Home</Button>
+      <Button>About</Button>
+      <Button>FAQs</Button>
+      <Button>Contact</Button> -->
+      <Button raised class="spacing" color="accent">Login</Button>
+      <Button raised class="spacing" color="accent">Signup</Button>
     </Navbar>
+
+    <div class="container">
+      <Autocomplete highlight list :model="employees">Employees</Autocomplete>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <Table :headings="headers" :tableData="users" card fixedHeader>
+        <template slot="title">My Title</template>
+      </Table>
+    </div>
+
 
     <!-- <Table :headings="headers" :tableData="users" card fixedHeader>
       <template slot="title">My Title</template>
@@ -42,6 +58,22 @@
     components,
     data() {
       return {
+        employees: [
+          'Jim Halpert',
+          'Dwight Schrute',
+          'Michael Scott',
+          'Pam Beesly',
+          'Angela Martin',
+          'Kelly Kapoor',
+          'Ryan Howard',
+          'Kevin Malone',
+          'Creed Bratton',
+          'Oscar Nunez',
+          'Toby Flenderson',
+          'Stanley Hudson',
+          'Meredith Palmer',
+          'Phyllis Lapin-Vance'
+        ],
         headers: [
           {label: "ID", sort: "id", type: "numeric"},
           {label: "Name", sort: "name", type: "text"},
@@ -197,12 +229,18 @@
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    /* margin-top: 60px; */
+  }
+
+  .container {
+    margin-top: 40px;
+    width: 80%;
+    display: inline-block;
+  }
 </style>
