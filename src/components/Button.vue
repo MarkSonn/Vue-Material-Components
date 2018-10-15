@@ -74,9 +74,12 @@
 </template>
 
 <style lang="scss" scoped>
-  // small {
-  //   display: block;
-  // }
+  Button {
+    margin: 0;
+  }
+  .spacing {
+    margin: 0 10px;
+  }
 </style>
 
 <script>

@@ -1,7 +1,21 @@
 <template>
   <div id="app">
 
-    <RegularCard size="small" image="https://vuematerial.io/assets/examples/card-sky.jpg">
+    <Navbar indent elevation="24" color="primary" >
+      <template slot="title">Vue Material</template>
+      <Button>Refresh</Button>
+      <Button>Refresh</Button>
+      <Button>Refresh</Button>
+      <Button>Refresh</Button>
+      <Button raised class="spacing" color="accent">Refresh</Button>
+      <Button raised class="spacing" color="accent">Create</Button>
+    </Navbar>
+
+    <!-- <Table :headings="headers" :tableData="users" card fixedHeader>
+      <template slot="title">My Title</template>
+    </Table> -->
+
+    <!-- <RegularCard size="small" image="https://vuematerial.io/assets/examples/card-sky.jpg">
       <template slot="title">Awesome Card</template>
       <template slot="subtitle">With so much functionality</template>
       <Button slot="failure">Lol</Button>
